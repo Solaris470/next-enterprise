@@ -16,8 +16,8 @@ export default function Nav() {
 
   return (
 <>
-<nav className="">
-      <div className={`${isOpen ? "bg-white" : "bg-[#f7e1d2]"} mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4`}>
+<nav className={`${isOpen ? "bg-white" : "bg-[#f7e1d2]"}`}>
+      <div className=" mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4">
         {/* Logo */}
         <div id="logo">
           <img
