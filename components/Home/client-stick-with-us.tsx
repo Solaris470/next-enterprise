@@ -60,14 +60,14 @@ export default function ClientStickWithUs() {
       </Swiper>
 
       {/* Custom Navigation Buttons */}
-      <div className="mt-4 flex items-center justify-between">
+      {/* <div className="mt-4 flex items-center justify-between">
         <button className="swiper-button-prev rounded-full bg-green-900 p-3 text-white">
           <FaArrowLeft />
         </button>
         <button className="swiper-button-next rounded-full bg-green-900 p-3 text-white">
           <FaArrowRight />
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }
