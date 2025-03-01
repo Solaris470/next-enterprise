@@ -1,4 +1,14 @@
-export default function ClientStickWithUs() {
+"use client"
+
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
+import { Playfair_Display } from "next/font/google"
+
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"] })
 
     const data = [
         {
@@ -8,123 +18,56 @@ export default function ClientStickWithUs() {
             "role" :"VP of Quality & Customer Care, SymmetryRx"
         },{
             "id" : 2,
-            "text" : "SupportNinja has really been flexible with us as we’re growing the business, and have been really responsive and accommodating. They’ve been integral to helping our business grow.",
-            "name" :"Pam Schwab",
-            "role" :"VP of Quality & Customer Care, SymmetryRx"
+            "text" : "Our partnership with SupportNinja has helped meet client demands we couldn’t handle internally. They have also given us great referrals with a much shorter sales cycle than we typically see.",
+            "name" :"Michael Hanson",
+            "role" :"VP Growth, CloudTask"
         },{
             "id" : 3,
-            "text" : "SupportNinja has really been flexible with us as we’re growing the business, and have been really responsive and accommodating. They’ve been integral to helping our business grow.",
-            "name" :"Pam Schwab",
-            "role" :"VP of Quality & Customer Care, SymmetryRx"
+            "text" : "I love the communication that we have with management, especially when we need to address something. It gets handled really quickly! Beyond this, I get great support, they're reliable and they get the job done.",
+            "name" :"Lorna Quijano",
+            "role" :"Full Service Manager, RedWeek"
         },{
             "id" : 4,
-            "text" : "SupportNinja has really been flexible with us as we’re growing the business, and have been really responsive and accommodating. They’ve been integral to helping our business grow.",
-            "name" :"Pam Schwab",
-            "role" :"VP of Quality & Customer Care, SymmetryRx"
+            "text" : "SupportNinja is really responsive and flexible based on our needs. But what we’re really, really happy about is the Ninjas and their commitment to the brand. They’re like an extension of our team!",
+            "name" :"Sudip Dasgupta",
+            "role" :"Head of Customer Experience, Product Madness"
         }
     ]
+
+export default function ClientStickWithUs() {
   return (
-    <>
-      <div id="indicators-carousel" className="relative w-full" data-carousel="static">
-        {/* <!-- Carousel wrapper --> */}
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-          {/* <!-- Item 1 --> */}
-          {data.map((item) => (
-            <div key={item.id} className="hidden duration-700 ease-in-out" >
-              <p>{item.text}</p>
-              <p>{item.name}</p>
-              <p>{item.role}</p>
+    <div className="mx-auto w-full max-w-6xl p-10">
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={30}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        className="relative"
+      >
+        {data.map((testimonial, index) => (
+          <SwiperSlide key={index}>
+            <div className="rounded-lg bg-[#f7e1d2] p-30 text-center shadow-md">
+              <p className="text-xl font-semibold text-gray-800 italic">"<span className={playfair.className}>{testimonial.text}</span>"</p>
+              <h3 className="mt-4 font-semibold text-gray-900">{testimonial.name}</h3>
+              <p className="text-sm text-gray-600">{testimonial.role}</p>
             </div>
-          ))}
-          </div>
-        {/* <!-- Slider indicators --> */}
-        <div className="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="h-3 w-3 rounded-full"
-            aria-current="true"
-            aria-label="Slide 1"
-            data-carousel-slide-to="0"
-          ></button>
-          <button
-            type="button"
-            className="h-3 w-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 2"
-            data-carousel-slide-to="1"
-          ></button>
-          <button
-            type="button"
-            className="h-3 w-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 3"
-            data-carousel-slide-to="2"
-          ></button>
-          <button
-            type="button"
-            className="h-3 w-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 4"
-            data-carousel-slide-to="3"
-          ></button>
-          <button
-            type="button"
-            className="h-3 w-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 5"
-            data-carousel-slide-to="4"
-          ></button>
-        </div>
-        {/* <!-- Slider controls --> */}
-        <button
-          type="button"
-          className="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
-          data-carousel-prev
-        >
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
-            <svg
-              className="h-4 w-4 text-white rtl:rotate-180 dark:text-gray-800"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 1 1 5l4 4"
-              />
-            </svg>
-            <span className="sr-only">Previous</span>
-          </span>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Custom Navigation Buttons */}
+      <div className="mt-4 flex items-center justify-between">
+        <button className="swiper-button-prev rounded-full bg-green-900 p-3 text-white">
+          <FaArrowLeft />
         </button>
-        <button
-          type="button"
-          className="group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
-          data-carousel-next
-        >
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
-            <svg
-              className="h-4 w-4 text-white rtl:rotate-180 dark:text-gray-800"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 9 4-4-4-4"
-              />
-            </svg>
-            <span className="sr-only">Next</span>
-          </span>
+        <button className="swiper-button-next rounded-full bg-green-900 p-3 text-white">
+          <FaArrowRight />
         </button>
       </div>
-    </>
+    </div>
   )
 }

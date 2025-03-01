@@ -53,7 +53,7 @@ export default function TimeLine() {
   return (
     <>
       <div className="">
-        <div className="py-5 flex flex-col gap-5">
+        <div className="py-5 flex flex-col gap-10">
         <h1 className="font-bold text-xl">Get set up in 5 easy steps</h1>
         <div className="btngroup flex items-center justify-between gap-3">
             <button className={`rounded-4xl ${activeButton === 'management' ? 'bg-white' : 'bg-[#ccccc6]'} text-sm py-2 px-6 w-full font-semibold cursor-pointer shadow-2xl`} onClick={() => setActiveButton('management')}>Management-as-a-Service</button>
@@ -61,7 +61,7 @@ export default function TimeLine() {
         </div>
         </div>
        
-        <ol className="relative border-s border-gray-200 dark:border-gray-700">
+        <ol className="relative border-s border-gray-200 dark:border-gray-700 my-5">
           {(activeButton === 'management' ? content : content2).map((item) => (
             <li key={item.id} className="flex ms-6 mb-10 gap-10">
               <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
