@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+
 @config '../tailwind.config.js';
 
 /*
@@ -17,5 +18,11 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  :root {
+    --color-primary: #f7e1d2;
   }
 }
