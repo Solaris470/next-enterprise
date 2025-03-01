@@ -46,7 +46,7 @@ export default function SupportItems() {
 
   return (
     <>
-      <div className="grid grid-cols-3 items-center justify-center gap-20">
+      <div className="flex flex-col md:grid md:grid-cols-3 items-center justify-center gap-20">
         {items.map((item, index) => (
           <div key={item.id}>
             <div className="support-item gap-y-5 flex flex-col">
@@ -55,14 +55,13 @@ export default function SupportItems() {
             <h3>{item.title}</h3>
               </div>
               <div className="flex items-center gap-3 font-normal">
-            <div className=""></div>
             <p>{item.text}</p>
               </div>
               <div className="flex items-center gap-3 font-bold">
-            <div className=""></div>
             <a href="#">{item.link} {'->'}</a>
               </div>
             </div>
+            <hr className="mt-10 border-b border-gray-400 "/>
           </div>
         ))}
       </div>

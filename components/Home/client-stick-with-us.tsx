@@ -8,7 +8,7 @@ import "swiper/css/navigation"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 import { Playfair_Display } from "next/font/google"
 
-const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"] })
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"],style:"italic" })
 
     const data = [
         {
@@ -36,7 +36,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"] }
 
 export default function ClientStickWithUs() {
   return (
-    <div className="mx-auto w-full max-w-6xl p-10">
+    <div className="mx-auto w-full sm:max-w-6xl sm:p-10 bg-[#f7e1d2] rounded-lg shadow-md">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={30}
@@ -50,10 +50,10 @@ export default function ClientStickWithUs() {
       >
         {data.map((testimonial, index) => (
           <SwiperSlide key={index}>
-            <div className="rounded-lg bg-[#f7e1d2] p-30 text-center shadow-md">
-              <p className="text-xl font-semibold text-gray-800 italic">"<span className={playfair.className}>{testimonial.text}</span>"</p>
-              <h3 className="mt-4 font-semibold text-gray-900">{testimonial.name}</h3>
-              <p className="text-sm text-gray-600">{testimonial.role}</p>
+            <div className="p-10 md:p-20 text-center ">
+              <p className="text-xl sm:text-2xl sm:font-semibold text-gray-800 italic">"<span className={playfair.className}>{testimonial.text}</span>"</p>
+              <h3 className="mt-4 text-sm font-semibold text-gray-900">{testimonial.name}</h3>
+              <p className="text-xs text-gray-600">{testimonial.role}</p>
             </div>
           </SwiperSlide>
         ))}

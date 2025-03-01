@@ -1,7 +1,11 @@
+'use client'
+
+import Link from "next/link"
+
 export default function Resource() {
     return (
         <>
-        <h1>About</h1>
+        <Link href={'#'} className="font-bold">Resource</Link>
         </>
     )
 }

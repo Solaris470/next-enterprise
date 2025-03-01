@@ -54,7 +54,7 @@ export default function TimeLine() {
     <>
       <div className="">
         <div className="py-5 flex flex-col gap-10">
-        <h1 className="font-bold text-xl">Get set up in 5 easy steps</h1>
+        <h1 className="font-bold text-md sm:text-xl">Get set up in 5 easy steps</h1>
         <div className="btngroup flex items-center justify-between gap-3">
             <button className={`rounded-4xl ${activeButton === 'management' ? 'bg-white' : 'bg-[#ccccc6]'} text-sm py-2 px-6 w-full font-semibold cursor-pointer shadow-2xl`} onClick={() => setActiveButton('management')}>Management-as-a-Service</button>
             <button className={`rounded-4xl ${activeButton === 'talent' ? 'bg-white' : 'bg-[#ccccc6]'} text-sm py-2 px-6 w-full font-semibold cursor-pointer`} onClick={() => setActiveButton('talent')}>Talent-as-a-Service</button>
