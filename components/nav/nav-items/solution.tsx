@@ -4,25 +4,34 @@ import { IoIosArrowDown } from "react-icons/io"
 import { PiSealCheck } from "react-icons/pi"
 import { MdKeyboardArrowRight } from "react-icons/md"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Solution() {
+const [isOpen ,setIsOpen] = useState(false);
+
+const toggleMenu = () => {
+  setIsOpen(!isOpen)
+}
+
   return (
     <div className="group relative">
-      <button className="flex cursor-pointer items-center justify-center gap-1 font-bold">
+      <button className="flex cursor-pointer items-center justify-center gap-1 font-bold" onClick={toggleMenu}>
         Solutions <IoIosArrowDown className="text-sm" />
       </button>
 
-      <div className="invisible absolute top-15 left-[-40px] z-10 w-[720px] -translate-y-2 transform rounded-md bg-white p-6 opacity-0 shadow-lg transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+      <div className={`absolute top-15 left-1/2 -translate-x-1/2 z-10 w-[720px] -translate-y-2 transform rounded-md bg-white p-6 opacity-0 shadow-lg transition-opacity duration-300
+    ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 invisible"} 
+    group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible`}>
         <div className="grid grid-cols-2 gap-6">
           {/* Customer Experience Section */}
-          <div className="space-y-4 ">
+          <div className="space-y-4">
             <Link href={"#"} className="block">
-              <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-300">
+              <div className="flex items-start gap-3 rounded-lg p-2 hover:bg-gray-300">
                 <div className="text-3xl">
                   <PiSealCheck />
                 </div>
                 <div className="w-full">
-                  <div className="flex font-bold items-center">
+                  <div className="flex items-center font-bold">
                     Customer Experience <MdKeyboardArrowRight className="ml-1" />
                   </div>
                 </div>
@@ -33,7 +42,7 @@ export default function Solution() {
               <div>
                 <Link
                   href={"#"}
-                  className="flex items-center p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900 rounded-lg"
+                  className="flex items-center rounded-lg p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900"
                 >
                   Customer Conversion <MdKeyboardArrowRight className="ml-auto" />
                 </Link>
@@ -41,7 +50,7 @@ export default function Solution() {
               <div>
                 <Link
                   href={"#"}
-                  className="flex items-center p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900 rounded-lg"
+                  className="flex items-center rounded-lg p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900"
                 >
                   Customer Onboarding <MdKeyboardArrowRight className="ml-auto" />
                 </Link>
@@ -49,7 +58,7 @@ export default function Solution() {
               <div>
                 <Link
                   href={"#"}
-                  className="flex items-center p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900 rounded-lg"
+                  className="flex items-center rounded-lg p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900"
                 >
                   Customer Support <MdKeyboardArrowRight className="ml-auto" />
                 </Link>
@@ -57,7 +66,7 @@ export default function Solution() {
               <div>
                 <Link
                   href={"#"}
-                  className="flex items-center p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900 rounded-lg"
+                  className="flex items-center rounded-lg p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900"
                 >
                   Technical Customer Support <MdKeyboardArrowRight className="ml-auto" />
                 </Link>
@@ -65,7 +74,7 @@ export default function Solution() {
               <div>
                 <Link
                   href={"#"}
-                  className="flex items-center p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900 rounded-lg"
+                  className="flex items-center rounded-lg p-2 text-gray-600 hover:bg-gray-300 hover:text-gray-900"
                 >
                   Customer Renewals <MdKeyboardArrowRight className="ml-auto" />
                 </Link>
