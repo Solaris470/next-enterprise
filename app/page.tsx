@@ -65,7 +65,7 @@ export default function Web() {
         alt=""
       />
       <main className="flex flex-col items-center justify-center">
-        <section className="max-w-[80%] py-20 sm:py-40 md:py-60">
+        <section className="max-w-[80%] py-20 sm:py-40 xl:py-60">
           <div className="flex flex-col md:grid md:grid-cols-2 items-center justify-center gap-20 sm:gap-40">
             <div className="">
               <img
@@ -74,23 +74,23 @@ export default function Web() {
               />
             </div>
             <div className="flex flex-col gap-10">
-              <p className="text-3xl sm:text-6xl font-semibold">
+              <p className="text-3xl lg:text-4xl xl:text-6xl font-semibold">
                 <span className={playfair.className}>Free up resources, accelerate growth, and solve for scale.</span>{" "}
               </p>
-              <p className="text-md sm:text-xl font-medium">
+              <p className="text-md xl:text-xl font-medium">
                 At SupportNinja, we combine cutting-edge technology with value-centricity to foster high-performing,
                 reliable teams that turn growing pains into efficient pathways to profitability.
               </p>
-              <p className="text-md sm:text-xl font-medium">
+              <p className="text-md xl:text-xl font-medium">
                 Our customized, agile, AI-enabled solutions don’t just deliver cost savings — they also help you achieve
                 key business outcomes.
               </p>
-              <p className="text-md sm:text-xl font-medium">
+              <p className="text-md xl:text-xl font-medium">
                 We work closely with you to continually adjust strategies, realize efficiencies, and drive scale
                 according to your unique needs. Plus, flexibility is baked in from day one, so you’re never locked into
                 rigid, long-term contracts.
               </p>
-              <p className="text-md sm:text-xl font-medium">Now that’s outsourcing worth talking about.</p>
+              <p className="text-md xl:text-xl font-medium">Now that’s outsourcing worth talking about.</p>
             </div>
           </div>
         </section>
@@ -170,8 +170,8 @@ export default function Web() {
             <TimeLine />
           </div>
         </section>
-        <section className="flex w-full items-center justify-center px-7 sm:px-20 md:px-50 pt-20">
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-40">
+        <section className="flex w-full items-center justify-center px-7 sm:px-20 md:px-50 lg:px-20 pt-20">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-10 lg:gap-5 xl:gap-30">
             <div className="flex flex-col gap-10">
               <div className="text-3xl sm:text-6xl">
                 <span className={playfair.className}>We’re passionate about our people.</span>{" "}
@@ -225,8 +225,8 @@ export default function Web() {
             </div>
           </div>
         </section>
-        <section className="flex w-full items-center justify-center px-7 sm:px-20 md:px-40 pt-20">
-          <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:gap-40">
+        <section className="flex w-full items-center justify-center px-7 sm:px-20 lg:px-20 pt-20">
+          <div className="flex flex-col-reverse justify-center items-center md:grid md:grid-cols-2 lg:gap-10 xl:gap-30">
             <div className="">
               <img
                 className="w-full rounded-2xl"
@@ -234,7 +234,7 @@ export default function Web() {
               />
             </div>
             <div className="flex flex-col gap-10">
-              <div className="text-3xl sm:text-6xl">
+              <div className=" lg:text-4xl sm:text-6xl">
                 <span className={playfair.className}>Grow your career and unleash your potential.</span>{" "}
               </div>
               <div className="text-md sm:text-xl font-bold">Ready to expand your horizons at a truly global company?</div>
@@ -253,10 +253,10 @@ export default function Web() {
           src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c211cce4793_Section%20Curve%2003.svg"
           alt=""
         />
-        <section className="flex w-full items-center justify-center bg-[#f7e1d2] px-7 sm:px-20 md:px-40 py-20">
+        <section className="flex w-full items-center justify-center bg-[#f7e1d2] px-7 sm:px-20 xl:px-40 py-20">
           <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:gap-40">
             <div className="flex flex-col gap-10">
-              <div className="text-3xl sm:text-6xl">
+              <div className="text-3xl lg:text-4xl xl:text-6xl">
                 <span className={playfair.className}>We’re better together. Start building your dream team.</span>{" "}
               </div>
               <div className="text-sm sm:text-md font-bold">Design a custom outsourcing solution that drives results.</div>
@@ -265,7 +265,7 @@ export default function Web() {
                 <div className="rounded-full bg-white px-2 py-1 text-[#ee4b4a]">{"->"}</div>
               </button>
             </div>
-            <div className="">
+            <div className="flex justify-center items-center">
               <img
                 className="w-full rounded-2xl"
                 src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cc4e1ce4794_Character%2520Illustration__Footer-CTA-p-800.webp"
